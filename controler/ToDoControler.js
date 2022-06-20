@@ -1,4 +1,4 @@
-const ToDoModel=require("../ToDoModel");
+const ToDoModel=require("../models/ToDoModels");
 
 //GET TODO
 module.exports.getToDo=async(req,res)=>{

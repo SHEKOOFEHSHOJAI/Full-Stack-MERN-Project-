@@ -4,9 +4,11 @@ const mongoose=require("mongoose");
 require("dotenv").config();
 const cors=require("cors");
 
+const router=require("./routes/ToDoRoutes")
 const app=express();
 app.use(express.json())
 app.use(cors());
+app.use(router)
 
 mongoose
   .connect(process.env.MONGO_URL, {

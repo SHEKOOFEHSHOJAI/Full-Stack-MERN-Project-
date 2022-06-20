@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function item() {
+export default function Item() {
   return (
     <div className="item">
       <div className="text">By Coffee</div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Item() {
+function Item() {
   return (
     <div className="item">
       <div className="text">By Coffee</div>
@@ -11,3 +11,5 @@ export default function Item() {
     </div>
   );
 }
+
+export default Item;

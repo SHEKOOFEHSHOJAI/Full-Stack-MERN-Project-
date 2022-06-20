@@ -10,3 +10,5 @@ const todoSchma=new mongoose.Schema({
 
    
 })
+
+module.exports=mongoose.model("ToDo",todoSchma);

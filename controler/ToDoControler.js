@@ -20,8 +20,8 @@ ToDoModel.create({text})
 
 //DELETE
 module.exports.deleteToDo=(req,res)=>{
-    const {id}=req.body;
-    ToDoModel.findByIdUpdate(id)
+    const {_id}=req.body;
+    ToDoModel.findByIdAndDelete(_id)
       .then(() => res.set(201).send("delete SuccesFully ...."))
       .catch((err) => console.log(err));
 
@@ -31,8 +31,8 @@ module.exports.deleteToDo=(req,res)=>{
 //UPDATE
 
 module.exports.updateToDo = (req, res) => {
-  const { id,text } = req.body;
-  ToDoModel.findByIdUpdate(id,{text})
+  const { _id,text } = req.body;
+  ToDoModel.findByIdAndUpdate(_id, { text })
     .then(() => res.set(201).send("update SuccesFully ...."))
     .catch((err) => console.log(err));
 };

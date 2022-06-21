@@ -29,6 +29,7 @@ input{
 }
 
 .add{
+  
     background-color: #000;
     color: #fff;
     padding: 0.5rem 1.5rem;
@@ -41,7 +42,8 @@ input{
     background-color: #000;
     color: #fff;
     padding: 1.5rem 3rem;
-    border-radius: 5px;
+    border-radius:5px;
+    
 }
 
 .icons{

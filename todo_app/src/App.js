@@ -9,6 +9,7 @@ function App() {
   const [text, setText] = useState("");
   const [todo, setTodo] = useState([]);
   const [updating, setupdating] = useState("");
+  
   useEffect(() => {
     axios
       .get("http://localhost:5000/get-todo")
@@ -62,8 +63,8 @@ function App() {
         .post("http://localhost:5000/delete-todo", { _id })
         .then((res) => {
           console.log(res.data);
-          
-          setupdating("");
+         
+         
         })
         .catch((err) => console.log(err));
     

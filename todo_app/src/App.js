@@ -25,10 +25,10 @@ function App() {
   const addUpdate = (_id, text) => {
     if (updating === "") {
       axios
-        .post("http://localhost:5000/get-todo", { text })
+        .post("http://localhost:5000/save-todo", { text })
         .then((res) => {
           setTodo(res.data);
-
+                                                                
           setTodo("");
         })
         .catch((err) => console.log(err));

@@ -4,14 +4,15 @@ const ToDoModel=require("../models/ToDoModels");
 module.exports.getToDo=async(req,res)=>{
    
    
-    const Todo=await ToDoModel.find();
+    const Todo = await ToDoModel.find();
     res.send(Todo)
 }
 
 //SAVE
 
 module.exports.saveToDo=async(req,res)=>{
-const {text}=req.body;
+const { text } = req.body;
+
 ToDoModel.create({text})
 
 .then(()=>res.set(201).send("ADDed SuccesFully ...."))
@@ -31,7 +32,7 @@ module.exports.deleteToDo=(req,res)=>{
 //UPDATE
 
 module.exports.updateToDo = (req, res) => {
-  const { _id,text } = req.body;
+  const { _id, text } = req.body;
   ToDoModel.findByIdAndUpdate(_id, { text })
     .then(() => res.set(201).send("update SuccesFully ...."))
     .catch((err) => console.log(err));

@@ -58,6 +58,16 @@ function App() {
 
   const deleteToDo=(_id)=>{
 
+     axios
+        .post("http://localhost:5000/delete-todo", { _id })
+        .then((res) => {
+          console.log(res.data);
+          
+          setupdating("");
+        })
+        .catch((err) => console.log(err));
+    
+
   }
   return (
     <div className="App">

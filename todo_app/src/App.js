@@ -13,9 +13,9 @@ function App() {
   useEffect(() => {
     axios
       .get("http://localhost:5000/get-todo")
-      .then((res) =>{
+      .then((res) => {
         console.log(res.data);
-       
+        setTodo(res.data)
       })
       .catch((err) => console.log(err));
   });
@@ -23,14 +23,14 @@ function App() {
   
   //FUNCTON UPDATE
   
-  const addUpdate = (_id, text) => {
+  const addUpdate = () => {
     if (updating === "") {
       axios
         .post("http://localhost:5000/save-todo", { text })
         .then((res) => {
-          setTodo(res.data);
+           console.log(res.data);
                                                                 
-          setTodo("");
+          setText("");
         })
         .catch((err) => console.log(err));
     } 
@@ -72,31 +72,29 @@ function App() {
   }
   return (
     <div className="App">
-      <div className="continer">
+      <div className="container">
         <h1>ToDo App</h1>
         <div className="top">
           <input
             type="text"
-            placeholder="write something...."
+            placeholder="Write Something..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          {/* add */}
           <div className="add" onClick={addUpdate}>
-            
-            {updating? "update": "Add"}
+            {updating ? "Update" : "Add"}
           </div>
         </div>
+
         <div className="list">
           {todo.map((item) => (
             <Item
               key={item._id}
               text={item.text}
               remove={() => deleteToDo(item._id)}
-              update={() => updateTodo(item._id, text.text)}
+              update={() => updateTodo(item._id, item.text)}
             />
           ))}
-          <Item />
         </div>
       </div>
     </div>

@@ -10,14 +10,13 @@ module.exports.getToDo=async(req,res)=>{
 
 //SAVE
 
-module.exports.saveToDo=async(req,res)=>{
-const { text } = req.body;
+module.exports.saveToDo = (req, res) => {
+  const { text } = req.body;
 
-ToDoModel.create({text})
-
-.then(()=>res.set(201).send("ADDed SuccesFully ...."))
-.catch((err)=>console.log(err))
-}
+  ToDoModel.create({ text })
+    .then(() => res.set(201).send("Added Successfully..."))
+    .catch((err) => console.log(err));
+};
 
 //DELETE
 module.exports.deleteToDo=(req,res)=>{

@@ -3,7 +3,7 @@ const ToDoModel = require("../models/ToDoModels");
 module.exports.getToDo = async (req, res) => {
   const todo = await ToDoModel.find();
   res.send(todo);
-};
+}; 
 
 module.exports.saveToDo = (req, res) => {
   const { text } = req.body;
